@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class SecondScreen extends StatelessWidget {
@@ -26,22 +27,16 @@ class SecondScreen extends StatelessWidget {
             children: [
               TextField(
                 controller: textController,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                ],
                 keyboardType: TextInputType.number,
                 autofocus: true,
               ),
               ElevatedButton(
                 child: const Text('Save'),
                 onPressed: () {
-                  var selectedIndex = int.parse(textController.text);
-
-                  if (selectedIndex > maxIndex) {
-                    Get.snackbar(
-                        'Ошибка', "Максимальный индекс равен $maxIndex");
-                  } else if (selectedIndex < 0) {
-                    Get.snackbar('Ошибка', "Индекс не может быть меньше 0");
-                  } else {
-                    Navigator.pop(context, int.parse(textController.text));
-                  }
+                  _saveIndex(context);
                 },
               )
             ],
@@ -49,5 +44,15 @@ class SecondScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _saveIndex(BuildContext context) {
+    var selectedIndex = int.parse(textController.text);
+
+    if (selectedIndex > maxIndex) {
+      Get.snackbar('Ошибка', "Максимальный индекс равен $maxIndex");
+    } else {
+      Navigator.pop(context, int.parse(textController.text));
+    }
   }
 }

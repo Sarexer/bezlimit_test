@@ -1,10 +1,11 @@
-import '../getx/pageview_controller.dart';
-import '../../../second_screen/presentation/pages/second_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../second_screen/presentation/pages/second_screen.dart';
+import '../getx/pageview_controller.dart';
+
 class HorizontalPageView extends StatelessWidget {
-  HorizontalPageView({Key? key, this.itemCount = 10}) : super(key: key);
+  HorizontalPageView({Key? key, required this.itemCount}) : super(key: key);
 
   final int itemCount;
   final PageViewController pageViewController = Get.put(PageViewController());
@@ -12,7 +13,7 @@ class HorizontalPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
-      itemCount: 10,
+      itemCount: itemCount,
       pageSnapping: false,
       controller: pageViewController.pageController,
       padEnds: false,
@@ -36,7 +37,7 @@ class HorizontalPageView extends StatelessWidget {
           int selectedPageIndex = await Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => SecondScreen(index: index, maxIndex: itemCount,),
+              builder: (context) => SecondScreen(index: index, maxIndex: itemCount - 1,),
             ),
           );
 

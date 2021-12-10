@@ -6,17 +6,17 @@ import '../widgets/main_bottom_sheet.dart';
 import '../widgets/rotating_circle.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  MainScreen({Key? key}) : super(key: key);
+
+  var mainScreenController = Get.put(MainScreenController());
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-
-    var mainScreenController = Get.put(MainScreenController(size: size));
+    mainScreenController.size = size;
 
     return Scaffold(
       body: Stack(
-        
         children: [
           Positioned(
             top: -100,

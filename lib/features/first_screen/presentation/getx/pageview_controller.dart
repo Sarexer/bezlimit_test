@@ -7,17 +7,15 @@ class PageViewController extends GetxController {
       PageController(initialPage: 0, viewportFraction: 0.3);
   var selectedPage = (-1).obs;
 
-
-  void selectPage(int index){
+  void selectPage(int index) {
     selectedPage.value = index;
     animateTo(index);
-
   }
 
   void animateTo(int index) {
     pageController.animateToPage(
       index,
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 1000),
       curve: Curves.easeIn,
     );
   }

@@ -1,3 +1,4 @@
+import 'package:bezlimit_test/core/constants/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -15,7 +16,7 @@ class RotatingCircle extends StatelessWidget {
       turns: AlwaysStoppedAnimation(
         progress / 360,
       ),
-      child: SvgPicture.asset('assets/svg/circle.svg'),
+      child: SvgPicture.asset(AppImages.circle),
     );
   }
 }
