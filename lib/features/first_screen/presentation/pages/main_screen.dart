@@ -1,7 +1,7 @@
+import 'package:bezlimit_test/features/first_screen/presentation/controllers/main_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../getx/main_screen_controller.dart';
 import '../widgets/main_bottom_sheet.dart';
 import '../widgets/rotating_circle.dart';
 

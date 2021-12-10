@@ -1,8 +1,8 @@
+import 'package:bezlimit_test/features/first_screen/presentation/controllers/pageview_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../second_screen/presentation/pages/second_screen.dart';
-import '../getx/pageview_controller.dart';
 
 class HorizontalPageView extends StatelessWidget {
   HorizontalPageView({Key? key, required this.itemCount}) : super(key: key);

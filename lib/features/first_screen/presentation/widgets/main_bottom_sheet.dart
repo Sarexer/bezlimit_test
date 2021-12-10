@@ -1,8 +1,8 @@
+import 'package:bezlimit_test/features/first_screen/presentation/controllers/main_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:solid_bottom_sheet/solid_bottom_sheet.dart';
 
-import '../getx/main_screen_controller.dart';
 import 'horizontal_pageview.dart';
 
 class MainBottomSheet extends StatelessWidget {
