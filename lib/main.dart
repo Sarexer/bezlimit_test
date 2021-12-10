@@ -1,7 +1,8 @@
-import 'package:bezlimit_test/features/first_screen/presentation/pages/first_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
+
+import 'features/first_screen/presentation/pages/main_screen.dart';
 
 void main() {
   // debugRepaintRainbowEnabled = true;
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         
         primarySwatch: Colors.blue,
       ),
-      home: const FirstScreen()
+      home: const MainScreen()
     );
   }
 }
